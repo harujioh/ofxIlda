@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include "ofMain.h"
+
 namespace ofxIlda {
 
 class Poly : public ofPolyline {
@@ -27,10 +29,6 @@ class Poly : public ofPolyline {
 
     Poly(const vector<ofPoint>& verts, ofFloatColor color) : ofPolyline(verts), color(color) {}
 
-    void setFromPolyline(const ofPolyline& polyline) {
-        ofFloatColor tmpColor = color;
-        *this = polyline;
-        color = tmpColor;
-    }
+    void setFromPolyline(const ofPolyline& polyline);
 };
 }
