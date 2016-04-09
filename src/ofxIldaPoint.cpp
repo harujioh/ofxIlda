@@ -25,12 +25,8 @@ void ofxIlda::Point::set(ofPoint p, ofFloatColor c, ofPoint pmin, ofPoint pmax) 
 
 //--------------------------------------------------------------
 // set position mapped from custom range (defaults to normalized)
-void ofxIlda::Point::setPosition(ofPoint p, ofPoint pmin, ofPoint pmax) {
-    set(ofMap(p.x, pmin.x, pmax.x, kIldaMinPoint, kIldaMaxPoint), ofMap(p.y, pmin.y, pmax.y, kIldaMinPoint, kIldaMaxPoint));
-}
+void ofxIlda::Point::setPosition(ofPoint p, ofPoint pmin, ofPoint pmax) { set(ofMap(p.x, pmin.x, pmax.x, kIldaMinPoint, kIldaMaxPoint), ofMap(p.y, pmin.y, pmax.y, kIldaMinPoint, kIldaMaxPoint)); }
 
 //--------------------------------------------------------------
 // gets position of point mapped to desired range (defaults to normalized)
-ofPoint ofxIlda::Point::getPosition(ofPoint pmin, ofPoint pmax) {
-    return ofPoint(ofMap(x, kIldaMinPoint, kIldaMaxPoint, pmin.x, pmax.x), ofMap(y, kIldaMinPoint, kIldaMaxPoint, pmin.y, pmax.y));
-}
+ofPoint ofxIlda::Point::getPosition(ofPoint pmin, ofPoint pmax) { return ofPoint(ofMap(x, kIldaMinPoint, kIldaMaxPoint, pmin.x, pmax.x), ofMap(y, kIldaMinPoint, kIldaMaxPoint, pmin.y, pmax.y)); }

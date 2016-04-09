@@ -102,6 +102,7 @@ void ofxIlda::Frame::draw(float x, float y, float w, float h) {
             ofFloatColor &pcolor = processedPolys[i].color;
             ofSetColor(pcolor.r * 255, pcolor.g * 255, pcolor.b * 255);
 
+#ifndef TARGET_RASPBERRY_PI
             glBegin(GL_POINTS);
             for (int i = 0; i < poly.size(); i++) {
                 ofPoint &p = poly[i];
@@ -110,6 +111,7 @@ void ofxIlda::Frame::draw(float x, float y, float w, float h) {
                 glVertex2f(p.x, p.y);
             }
             glEnd();
+#endif
         }
     }
 
